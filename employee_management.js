@@ -29,7 +29,7 @@ class Department {
     }
 
     get getDepartmentSalary(){
-        return this.employees.reduce((totalSalary, employee) => totalSalary + employeeSalary, 0);
+        return this.employees.reduce((totalSalary, employee) => totalSalary + employee.salary, 0);
     } // calculate total salary with reduce method 
 
     // Task 4 - Handle Bonuses for Managers
@@ -79,8 +79,8 @@ humanResources.addEmployee(bia);
 humanResources.addEmployee(fabio);
 
 // log total salary for each department
-console.log(`Total Salary for Marketin Department: $${marketing.getDepartmentSalary()}.`);
+console.log(`Total Salary for Marketin Department: $${marketing.getDepartmentSalary}.`);
 console.log(`Total Salary Plus Bonusus for Marketing Department: $${marketing.calcutaleTotalSalaryWithBonus()}.`);
 
-console.log(`Total Salary for Human Resources Department: $${humanResources.getDepartmentSalary()}.`);
+console.log(`Total Salary for Human Resources Department: $${humanResources.getDepartmentSalary}.`);
 console.log(`Total Salary Plus Bonusus for Human Resources: $${humanResources.calcutaleTotalSalaryWithBonus()}.`);
