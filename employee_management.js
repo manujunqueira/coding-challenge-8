@@ -13,8 +13,8 @@ class Employee {
     }
 }
 
-const bia = new Employee("Bia", 75000, "Marketing"); //adding a new employee and logging their details
-console.log(bia.getDetails());
+const employee0 = new Employee("Bia", 75000, "Designer"); //adding a new employee and logging their details
+console.log(employee0.getDetails());
 
 // Task 2 - Create a Department Class
 
@@ -54,6 +54,33 @@ class Manager extends Employee {
     } // returning details 
 }
 
-const max = new Manager("Max", 115000, "Analyst", "Business, 22000");
-console.log(max.getDetails());
+const manager0 = new Manager("Max", 115000, "Marketing Manager", "Marketing", 22000);
+console.log(manager0.getDetails());
 
+// Task 5 - Create and Manage Departments and Employees
+
+// departments
+const marketing = new Department("Marketing");
+const humanResources = new Department("Human Resources");
+
+// employees
+const bia = new Employee ("Bia", 95000, "Designer", "Human Resources");
+const paulo = new Employee("Paulo", 100000, "Developer", "Marketing");
+
+//Managers
+const max = new Manager ("Max", 115000, "Marketing Manager", "Marketing", 22000);
+const fabio = new Manager("Fabio", 120000, "Human Resources Manager", "Human Resources", 20000);
+
+//adding employees
+marketing.addEmployee(paulo);
+marketing.addEmployee(max);
+
+humanResources.addEmployee(bia);
+humanResources.addEmployee(fabio);
+
+// log total salary for each department
+console.log(`Total Salary for Marketin Department: $${marketing.getDepartmentSalary()}.`);
+console.log(`Total Salary Plus Bonusus for Marketing Department: $${marketing.calcutaleTotalSalaryWithBonus()}.`);
+
+console.log(`Total Salary for Human Resources Department: $${humanResources.getDepartmentSalary()}.`);
+console.log(`Total Salary Plus Bonusus for Human Resources: $${humanResources.calcutaleTotalSalaryWithBonus()}.`);
