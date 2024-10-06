@@ -31,7 +31,15 @@ class Department {
     get getDepartmentSalary(){
         return this.employees.reduce((totalSalary, employee) => totalSalary + employeeSalary, 0);
     } // calculate total salary with reduce method 
-};
+
+    // Task 4 - Handle Bonuses for Managers
+
+    calcutaleTotalSalaryWithBonus(){
+        return this.employees.reduce((totalSalary, emp) => {
+            return totalSalary + emp.salary + (emp.bonus ? emp.bonus:0);
+        }, 0); // calculate total salary with bonusus 
+    }
+}
 
 // Task 3 - Create a Manager Class that Inherits from Employee
 
